@@ -8,8 +8,8 @@ This script converts video into audio from given URL. You may use Rhythmbox to o
 To exit Rhythmbox, simply use `Ctrl + Q`  
 `Usage: ./youtube_dl.sh <URL>`  
   
-Adding executable permissions  
+- Adding executable permissions  
 `chmod+x youtube_dl.sh`  
   
-Install FFmpeg before proceeding  
+- Install FFmpeg before proceeding  
 `sudo apt install FFmpeg`  
