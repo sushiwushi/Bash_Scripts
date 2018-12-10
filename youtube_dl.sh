@@ -4,11 +4,11 @@ if [[ $# -eq 0 ]] ; then
     exit 0
 fi
 echo "URL=$1"
-if youtube-dl -x -f bestaudio -o "$HOME/Music/%(title)s.%(ext)s $1"; then
+if youtube-dl -x -f bestaudio -o "$HOME/Music/%(title)s.%(ext)s" $1; then
   echo "✺◟( ͡° ͜ʖ ͡°)◞✺  Done"
 else
   echo "Checking for updates..."
   sudo pip install --upgrade youtube_dl
-  youtube-dl -x -f bestaudio -o "$HOME/Music/%(title)s.%(ext)s $1"
+  youtube-dl -x -f bestaudio -o "$HOME/Music/%(title)s.%(ext)s" $1
   echo "✺◟( ͡° ͜ʖ ͡°)◞✺  Done"
 fi
