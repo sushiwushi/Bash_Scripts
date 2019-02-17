@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]] ; then
+    echo "Usage: ./buckhacker <target>"
+    exit 0
+fi
+
+access_token=$(cat access_token)
+
+if [ -z "$access_token" ]; then
+	printf "No access_token found!\n"
+	exit 1
+fi
+
+available_buckets=$(curl -s -L "http://buckets.grayhatwarfare.com/api/v1/files/""$1""?access_token=$access_token" | python -m json.tool | pygmentize -l json | grep -Po '(http).*('$1')' | grep -Po '(?<=http://)'.'*(?=.s3)' | sort -u)
+
+if [ -z "$available_buckets" ]; then
+    echo "No available buckets found!"
+    exit 1
+fi
+
+curl -s -L "http://buckets.grayhatwarfare.com/api/v1/files/""$1""?access_token=$access_token" | python -m json.tool | pygmentize -l json
