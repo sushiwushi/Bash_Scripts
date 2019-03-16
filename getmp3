@@ -1,6 +1,6 @@
 #!/bin/bash -e
 if [[ $# -eq 0 ]] ; then
-    echo "Usage: ./youtube_dl <URL>"
+    echo "Usage: ./getmp3 <URL>"
     exit 0
 fi
 echo "URL=$1"
