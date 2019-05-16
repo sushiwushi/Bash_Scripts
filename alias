@@ -1,8 +1,15 @@
+get(){
+        cat $1 | xclip -selection clipboard
+        echo Copied contents of $1 to the clipboard!
+}
+
+#Change to .zshrc if you're using zsh!
 alias vb='cd && vim .bashrc'
+#Make sure you have https://github.com/nvbn/thefuck installed!
 alias f='fuck'
 alias sp='searchsploit'
 alias copy='xclip -selection clipboard'
-alias update='sudo apt -y update && sudo apt -y upgrade && sudo apt -y dist-upgrade && sudo apt -y autoremove && echo "✺◟( ͡° ͜ʖ ͡°)◞✺"'
+alias u='sudo apt -y update && sudo apt -y upgrade && sudo apt -y dist-upgrade && sudo apt -y autoremove && echo "✺◟( ͡° ͜ʖ ͡°)◞✺"'
 alias p='pwd'
 alias l='ls -lah -X'
 alias c='clear'
@@ -10,6 +17,5 @@ alias q='exit'
 alias t='htop'
 alias h='history'
 alias ..='cd ..'
-alias goshit='cd && cd go/bin'
 alias run='msfdb init && msfconsole'
 alias bye='shutdown now'
